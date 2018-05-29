@@ -2,47 +2,42 @@ package formularios;
 
 // @author 104936
 
-import controladores.ControladorVisualizaProduto;
+import controladores.ControladorGeraHistorico;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 
-public class TelaVisualizaProduto extends javax.swing.JFrame {
+public class TelaHistorico extends javax.swing.JFrame {
 
-    private String nivelAcesso;
-    
-    public TelaVisualizaProduto(String acesso) {
+    public TelaHistorico() {
         initComponents();
-        nivelAcesso = acesso;
         this.setLocationRelativeTo(null);
-        ControladorVisualizaProduto.atualizaLista((DefaultTableModel) tabelaProdutos.getModel());
+        ControladorGeraHistorico.atualizaRelatorio((DefaultTableModel) tabelaRelatorio.getModel());
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tabelaProdutos = new javax.swing.JTable();
+        tabelaRelatorio = new javax.swing.JTable();
         buttonVoltar = new javax.swing.JButton();
 
-        jButton1.setText("jButton1");
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Visualizar Produtos");
+        setTitle("Histórico");
 
-        tabelaProdutos.setModel(new javax.swing.table.DefaultTableModel(
+        tabelaRelatorio.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Data", "Produto", "Preço", "Qtd"
+                "Data", "Descrição"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Double.class, java.lang.Integer.class
+                java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -53,14 +48,10 @@ public class TelaVisualizaProduto extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(tabelaProdutos);
-        if (tabelaProdutos.getColumnModel().getColumnCount() > 0) {
-            tabelaProdutos.getColumnModel().getColumn(0).setMinWidth(110);
-            tabelaProdutos.getColumnModel().getColumn(0).setMaxWidth(110);
-            tabelaProdutos.getColumnModel().getColumn(2).setMinWidth(60);
-            tabelaProdutos.getColumnModel().getColumn(2).setMaxWidth(60);
-            tabelaProdutos.getColumnModel().getColumn(3).setMinWidth(60);
-            tabelaProdutos.getColumnModel().getColumn(3).setMaxWidth(60);
+        jScrollPane1.setViewportView(tabelaRelatorio);
+        if (tabelaRelatorio.getColumnModel().getColumnCount() > 0) {
+            tabelaRelatorio.getColumnModel().getColumn(0).setMinWidth(100);
+            tabelaRelatorio.getColumnModel().getColumn(0).setMaxWidth(100);
         }
 
         buttonVoltar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -76,14 +67,13 @@ public class TelaVisualizaProduto extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(141, 141, 141)
-                        .addComponent(buttonVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(141, 141, 141)
+                .addComponent(buttonVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(435, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -99,22 +89,16 @@ public class TelaVisualizaProduto extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonVoltarActionPerformed
-        if(nivelAcesso.equals("ACESSO_GERENTE")){
-            this.dispose();
-            TelaPrincipalGerente telaGerente = new TelaPrincipalGerente();
-            telaGerente.setVisible(true);
-        }else if(nivelAcesso.equals("ACESSO_ESTOQUISTA")){
-            this.dispose();
-            TelaPrincipalEstoquista telaEstoquista = new TelaPrincipalEstoquista();
-            telaEstoquista.setVisible(true);
-        }
+        this.dispose();
+        TelaPrincipalGerente tela = new TelaPrincipalGerente();
+        tela.setVisible(true);
     }//GEN-LAST:event_buttonVoltarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonVoltar;
-    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tabelaProdutos;
+    private javax.swing.JTable tabelaRelatorio;
     // End of variables declaration//GEN-END:variables
 
 }

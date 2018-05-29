@@ -1,12 +1,17 @@
 package formularios;
 
 // @author 104936
+import beans.listas.Listas;
+import controladores.ControladorGeraTxt;
+import controladores.ControladorMensagem;
 
 public class TelaPrincipalEstoquista extends javax.swing.JFrame {
 
     public TelaPrincipalEstoquista() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -32,12 +37,27 @@ public class TelaPrincipalEstoquista extends javax.swing.JFrame {
 
         buttonEncerrarSessao.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         buttonEncerrarSessao.setText("Encerrar Sessão");
+        buttonEncerrarSessao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonEncerrarSessaoActionPerformed(evt);
+            }
+        });
 
         buttonGerarDocumento.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         buttonGerarDocumento.setText("Gerar documento do Relatório");
+        buttonGerarDocumento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonGerarDocumentoActionPerformed(evt);
+            }
+        });
 
         buttonSair.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         buttonSair.setText("Sair");
+        buttonSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonSairActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -70,10 +90,38 @@ public class TelaPrincipalEstoquista extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonRelatorioEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRelatorioEstoqueActionPerformed
-        this.dispose();
-        TelaVisualizaProduto tela = new TelaVisualizaProduto("ACESSO_ESTOQUISTA");
-        tela.setVisible(true);
+        if (Listas.estoqueProdutos.isEmpty()) {
+            ControladorMensagem.exibeMensagem("Não há nenhum produto no estoque.");
+        } else {
+            this.dispose();
+            TelaVisualizaProduto tela = new TelaVisualizaProduto("ACESSO_ESTOQUISTA");
+            tela.setVisible(true);
+        }
+
     }//GEN-LAST:event_buttonRelatorioEstoqueActionPerformed
+
+    private void buttonGerarDocumentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonGerarDocumentoActionPerformed
+        if (Listas.estoqueProdutos.isEmpty()) {
+            ControladorMensagem.exibeMensagem("Não há nenhum produto no estoque.");
+        } else {
+            ControladorGeraTxt.geraTxt();
+        }
+    }//GEN-LAST:event_buttonGerarDocumentoActionPerformed
+
+    private void buttonEncerrarSessaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonEncerrarSessaoActionPerformed
+        if(ControladorMensagem.confirmacaoMensagem("Deseja realmente encerrar a sessão?") == 0){
+            this.dispose();
+            TelaLogin tela = new TelaLogin();
+            tela.setVisible(true);
+        }
+    }//GEN-LAST:event_buttonEncerrarSessaoActionPerformed
+
+    private void buttonSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSairActionPerformed
+        if(ControladorMensagem.confirmacaoMensagem("Deseja realmente terminar o programa?") == 0){
+            this.dispose();
+            System.exit(0);
+        }
+    }//GEN-LAST:event_buttonSairActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

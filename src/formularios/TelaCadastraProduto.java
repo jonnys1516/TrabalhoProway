@@ -2,6 +2,9 @@ package formularios;
 
 // @author 104936
 
+import controladores.ControladorInsereProduto;
+
+
 public class TelaCadastraProduto extends javax.swing.JFrame {
 
     public TelaCadastraProduto() {
@@ -38,6 +41,11 @@ public class TelaCadastraProduto extends javax.swing.JFrame {
 
         buttonCadastrar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         buttonCadastrar.setText("Cadastrar");
+        buttonCadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonCadastrarActionPerformed(evt);
+            }
+        });
 
         buttonVoltar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         buttonVoltar.setText("Voltar");
@@ -96,8 +104,14 @@ public class TelaCadastraProduto extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonVoltarActionPerformed
-        // TODO add your handling code here:
+        this.dispose();
+        TelaPrincipalGerente tela = new TelaPrincipalGerente();
+        tela.setVisible(true);
     }//GEN-LAST:event_buttonVoltarActionPerformed
+
+    private void buttonCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCadastrarActionPerformed
+        ControladorInsereProduto.insereProduto(fieldProduto, fieldPreco, fieldQuantidade);
+    }//GEN-LAST:event_buttonCadastrarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonCadastrar;

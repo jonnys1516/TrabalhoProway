@@ -9,5 +9,5 @@ import java.util.ArrayList;
 public class Listas {
     public static ArrayList<Produto> estoqueProdutos = new ArrayList();
     public static ArrayList<Funcionario> funcionariosSistema = new ArrayList();
-    public static ArrayList<Produto> historicoProdutos = new ArrayList();
+    public static ArrayList<String> historicoProdutos = new ArrayList();
 }

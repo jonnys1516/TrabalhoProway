@@ -78,6 +78,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Encerrar Sess&#xe3;o"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonEncerrarSessaoActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="buttonGerarDocumento">
       <Properties>
@@ -86,6 +89,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Gerar documento do Relat&#xf3;rio"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonGerarDocumentoActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="buttonSair">
       <Properties>
@@ -94,6 +100,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Sair"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonSairActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

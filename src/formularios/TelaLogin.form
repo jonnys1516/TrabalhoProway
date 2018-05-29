@@ -32,7 +32,7 @@
               </Group>
               <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="textUsuario" max="32767" attributes="0"/>
+                  <Component id="fieldUsuario" max="32767" attributes="0"/>
                   <Component id="fieldSenha" pref="176" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -50,7 +50,7 @@
               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="labelUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="textUsuario" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
+                  <Component id="fieldUsuario" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -92,7 +92,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonAutenticarActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="textUsuario">
+    <Component class="javax.swing.JTextField" name="fieldUsuario">
     </Component>
     <Component class="javax.swing.JPasswordField" name="fieldSenha">
     </Component>
