@@ -19,7 +19,7 @@ public class ControladorRemoveProduto {
     
     
     // método para remover o produto
-    public static void removeProduto(String produto){
+    public static boolean removeProduto(String produto){
         if(ControladorMensagem.confirmacaoMensagem("Tem certeza que deseja remover o produto?") == 0){
             for(Produto iterador : Listas.estoqueProdutos){
                 if(iterador.getNomeProduto().equals(produto)){
@@ -30,6 +30,9 @@ public class ControladorRemoveProduto {
             ControladorMensagem.exibeMensagem("Produto removido com sucesso.");
             LocalDateTime tempo = LocalDateTime.now();
             Listas.historicoProdutos.add(tempo.getDayOfMonth()+"/"+tempo.getMonth().getValue()+"/"+tempo.getYear()+" "+tempo.getHour()+":"+tempo.getMinute()+"###Produto "+produto+" removido.");
+            return true;
+        }else{
+            return false;
         }
     }
     

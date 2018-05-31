@@ -22,7 +22,7 @@ public class TelaRemoveProduto extends javax.swing.JFrame {
         comboProdutos = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setUndecorated(true);
+        setTitle("Remover");
 
         labelUsuario.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         labelUsuario.setText("Selecione o produto a ser removido: ");
@@ -88,7 +88,11 @@ public class TelaRemoveProduto extends javax.swing.JFrame {
     }//GEN-LAST:event_buttonVoltarActionPerformed
 
     private void buttonRemoverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRemoverActionPerformed
-        ControladorRemoveProduto.removeProduto((String) comboProdutos.getSelectedItem());
+        if(ControladorRemoveProduto.removeProduto((String) comboProdutos.getSelectedItem())){
+            this.dispose();
+            TelaPrincipalGerente tela = new TelaPrincipalGerente();
+            tela.setVisible(true);
+        }
     }//GEN-LAST:event_buttonRemoverActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
