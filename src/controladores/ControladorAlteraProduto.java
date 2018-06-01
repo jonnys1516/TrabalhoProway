@@ -16,6 +16,7 @@ public class ControladorAlteraProduto {
         }
     }
 
+    // verifica se o produto é o mesmo
     private static boolean existeProdutoExceto(String produto, String produtoAntigo) {
         boolean ret = false;
         for (Produto p : Listas.estoqueProdutos) {
@@ -99,7 +100,6 @@ public class ControladorAlteraProduto {
                         p.setPrecoProduto(valorDoublePreco(campoNovoPreco));
                         p.setQuantidadeProduto(valorIntQuantidade(campoNovaQuantidade));
                         p.setDataCadastrada(tempo);
-
                         Listas.historicoProdutos.add(tempo.getDayOfMonth() + "/" + tempo.getMonth().getValue() + "/" + tempo.getYear() + " " + tempo.getHour() + ":" + tempo.getMinute() + "###Produto " + nomeProdutoAntigo + " alterado para " + campoNovoNome.getText().trim() + ".\n");
                         break;
                     }

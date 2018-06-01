@@ -23,7 +23,7 @@ public class ControladorGeraTxt {
                 File arquivo = new File(DIRETORIO_ARQUIVO);
                 arquivo.delete();
             } catch (Exception e) {
-                ControladorMensagem.exibeMensagem("Erro ao remover arquivo. Contate o suporte.");
+                ControladorMensagem.exibeMensagem("Ocorreu um erro ao manipular o arquivo. Contate o suporte.\nERRO: Erro ao remover arquivo.");
             }
         }
 
@@ -37,7 +37,7 @@ public class ControladorGeraTxt {
             return arquivo;
         } catch (Exception e) {
             e.printStackTrace();
-            ControladorMensagem.exibeMensagem("Erro ao criar arquivo. Contate o suporte.");
+            ControladorMensagem.exibeMensagem("Ocorreu um erro ao manipular o arquivo. Contate o suporte.\nERRO: Erro ao criar aruivo.");
         }
         return null;
     }
@@ -46,10 +46,10 @@ public class ControladorGeraTxt {
     public static boolean escreveArquivo(File arquivo) {
         try {
             PrintWriter pw = new PrintWriter(arquivo);
-            pw.println(String.format("%-25s%-25s%-25s%-25s", "Data", "Produto", "Preço", "Quantidade"));
+            pw.println(String.format("%-20s%-20s%-20s%-20s", "Data", "Produto", "Preço", "Quantidade"));
             for (Produto iterador : Listas.estoqueProdutos) {
                 String data = iterador.getDataCadastrada().getDayOfMonth() + "/" + iterador.getDataCadastrada().getMonth().getValue() + "/" + iterador.getDataCadastrada().getYear() + " " + iterador.getDataCadastrada().getHour() + ":" + iterador.getDataCadastrada().getMinute();
-                pw.println(String.format("%-25s%-25s%-25s%-25s", data, iterador.getNomeProduto(), "R$" + iterador.getPrecoProduto(), iterador.getQuantidadeProduto()));
+                pw.println(String.format("%-20s%-20s%-20s%-20s", data, iterador.getNomeProduto(), "R$" + iterador.getPrecoProduto(), iterador.getQuantidadeProduto()));
             }
             pw.flush();
             pw.close();

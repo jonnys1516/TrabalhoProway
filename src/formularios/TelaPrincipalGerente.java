@@ -27,8 +27,10 @@ public class TelaPrincipalGerente extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Principal: Gerente");
+        setResizable(false);
 
         buttonCadastrarFuncionario.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        buttonCadastrarFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/funcionario.png"))); // NOI18N
         buttonCadastrarFuncionario.setText("Cadastrar Funcionário");
         buttonCadastrarFuncionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -37,6 +39,7 @@ public class TelaPrincipalGerente extends javax.swing.JFrame {
         });
 
         buttonCadastrarProduto.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        buttonCadastrarProduto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/produto.png"))); // NOI18N
         buttonCadastrarProduto.setText("Cadastrar Produto");
         buttonCadastrarProduto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -45,6 +48,7 @@ public class TelaPrincipalGerente extends javax.swing.JFrame {
         });
 
         buttonRemoverProduto.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        buttonRemoverProduto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/remover.png"))); // NOI18N
         buttonRemoverProduto.setText("Remover Produto");
         buttonRemoverProduto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -53,6 +57,7 @@ public class TelaPrincipalGerente extends javax.swing.JFrame {
         });
 
         buttonVisualizarEstoque.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        buttonVisualizarEstoque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/estoque.png"))); // NOI18N
         buttonVisualizarEstoque.setText("Visualizar Estoque");
         buttonVisualizarEstoque.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -61,6 +66,7 @@ public class TelaPrincipalGerente extends javax.swing.JFrame {
         });
 
         buttonAlterarProduto.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        buttonAlterarProduto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/alterar2.png"))); // NOI18N
         buttonAlterarProduto.setText("Alterar Produto");
         buttonAlterarProduto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -69,6 +75,7 @@ public class TelaPrincipalGerente extends javax.swing.JFrame {
         });
 
         buttonEncerrarSessao.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        buttonEncerrarSessao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/encerrar.png"))); // NOI18N
         buttonEncerrarSessao.setText("Encerrar Sessão");
         buttonEncerrarSessao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -77,6 +84,7 @@ public class TelaPrincipalGerente extends javax.swing.JFrame {
         });
 
         buttonSair.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        buttonSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/sair.png"))); // NOI18N
         buttonSair.setText("Sair");
         buttonSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -85,6 +93,7 @@ public class TelaPrincipalGerente extends javax.swing.JFrame {
         });
 
         buttonVisualizarHistorico.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        buttonVisualizarHistorico.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/historico.png"))); // NOI18N
         buttonVisualizarHistorico.setText("Visualizar Histórico");
         buttonVisualizarHistorico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -98,15 +107,15 @@ public class TelaPrincipalGerente extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(72, 72, 72)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(buttonVisualizarEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buttonSair, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buttonEncerrarSessao, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buttonRemoverProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buttonCadastrarProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buttonCadastrarFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buttonAlterarProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buttonVisualizarHistorico, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(buttonVisualizarEstoque, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
+                    .addComponent(buttonCadastrarFuncionario, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
+                    .addComponent(buttonVisualizarHistorico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(buttonCadastrarProduto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(buttonAlterarProduto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(buttonRemoverProduto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(buttonEncerrarSessao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(buttonSair, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(72, 72, 72))
         );
         layout.setVerticalGroup(

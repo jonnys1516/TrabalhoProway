@@ -24,6 +24,7 @@ public class TelaLogin extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Autenticação");
+        setResizable(false);
 
         labelUsuario.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         labelUsuario.setText("Usuário:");
@@ -32,6 +33,7 @@ public class TelaLogin extends javax.swing.JFrame {
         labelSenha.setText("Senha:");
 
         buttonAutenticar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        buttonAutenticar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/autenticar.png"))); // NOI18N
         buttonAutenticar.setText("Autenticar");
         buttonAutenticar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -54,9 +56,9 @@ public class TelaLogin extends javax.swing.JFrame {
                     .addComponent(fieldSenha, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addGap(113, 113, 113)
-                .addComponent(buttonAutenticar)
-                .addContainerGap(125, Short.MAX_VALUE))
+                .addGap(110, 110, 110)
+                .addComponent(buttonAutenticar, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(110, 110, 110))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

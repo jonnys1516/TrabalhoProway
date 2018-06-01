@@ -23,6 +23,7 @@ public class TelaRemoveProduto extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Remover");
+        setResizable(false);
 
         labelUsuario.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         labelUsuario.setText("Selecione o produto a ser removido: ");

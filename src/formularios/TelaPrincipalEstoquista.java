@@ -26,8 +26,10 @@ public class TelaPrincipalEstoquista extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Principal: Estoquista");
+        setResizable(false);
 
         buttonRelatorioEstoque.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        buttonRelatorioEstoque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/relatorio.png"))); // NOI18N
         buttonRelatorioEstoque.setText("Relatório de Estoque");
         buttonRelatorioEstoque.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -36,6 +38,7 @@ public class TelaPrincipalEstoquista extends javax.swing.JFrame {
         });
 
         buttonEncerrarSessao.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        buttonEncerrarSessao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/encerrar.png"))); // NOI18N
         buttonEncerrarSessao.setText("Encerrar Sessão");
         buttonEncerrarSessao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -44,6 +47,7 @@ public class TelaPrincipalEstoquista extends javax.swing.JFrame {
         });
 
         buttonGerarDocumento.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        buttonGerarDocumento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/arquivo.png"))); // NOI18N
         buttonGerarDocumento.setText("Gerar documento do Relatório");
         buttonGerarDocumento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -52,6 +56,7 @@ public class TelaPrincipalEstoquista extends javax.swing.JFrame {
         });
 
         buttonSair.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        buttonSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/sair.png"))); // NOI18N
         buttonSair.setText("Sair");
         buttonSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
