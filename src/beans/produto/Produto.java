@@ -48,5 +48,4 @@ public class Produto {
         this.dataCadastrada = dataCadastrada;
     }
     
-    
 }
