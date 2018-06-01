@@ -7,8 +7,10 @@ import java.io.File;
 import java.io.PrintWriter;
 
 public class ControladorGeraTxt {
-
+    // variaveis que definem onde o arquivo é guardado
+    // file.separator é o separador de diretório, sistemas UNIX usam /, outros usam \
     static final String SEPARADOR_ARQUIVO = System.getProperty("file.separator");
+    // user.home é a pasta do usuário ex: C:\Users\Nicolas
     static final String DIRETORIO_ARQUIVO = System.getProperty("user.home") + SEPARADOR_ARQUIVO + "Estoque.txt";
 
     // método para verificar se o arquivo existe

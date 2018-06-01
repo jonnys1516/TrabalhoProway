@@ -7,7 +7,8 @@ import javax.swing.table.DefaultTableModel;
 
  
 public class ControladorVisualizaProduto {
-
+    
+    // método para atualizar a lista de produtos
     public static void atualizaLista(DefaultTableModel modeloTabela){
         for(Produto produto : Listas.estoqueProdutos){
             String horaProduto = produto.getDataCadastrada().getDayOfMonth()+"/"+produto.getDataCadastrada().getMonth().getValue()+"/"+produto.getDataCadastrada().getYear()+" - "+produto.getDataCadastrada().getHour() + ":" + produto.getDataCadastrada().getMinute();

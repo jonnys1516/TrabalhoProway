@@ -9,14 +9,12 @@ import javax.swing.JComboBox;
  
 public class ControladorRemoveProduto {
 
-    
     // método para atualizar o combo box com produtos
     public static void atualizaProdutos(JComboBox combo){
         for(Produto p : Listas.estoqueProdutos){
             combo.addItem(p.getNomeProduto());
         }
     }
-    
     
     // método para remover o produto
     public static boolean removeProduto(String produto){

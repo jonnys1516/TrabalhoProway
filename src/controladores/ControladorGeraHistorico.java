@@ -7,6 +7,7 @@ import javax.swing.table.DefaultTableModel;
  
 public class ControladorGeraHistorico {
     
+    // método para atualizar a tabela que contém os relatórios
     public static void atualizaRelatorio(DefaultTableModel modelo){
         for(String iterador : Listas.historicoProdutos){
             String[] vetor = iterador.split("###");

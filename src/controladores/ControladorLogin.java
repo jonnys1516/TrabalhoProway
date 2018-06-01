@@ -9,6 +9,7 @@ import javax.swing.JTextField;
  
 public class ControladorLogin {
 
+    // método para verificar se é um funcionário
     private static boolean autenticacaoFuncionario(String usuario, String senha){
         boolean ret = false;
         for(Funcionario f : Listas.funcionariosSistema){
@@ -20,11 +21,13 @@ public class ControladorLogin {
         return ret;
     }
     
+    
+    // método para ver se as credenciais são do gerente
     private static boolean autenticacaoGerente(String usuario, String senha){
         return (usuario.equals("ralf") && senha.equals("lindo"));
     }
     
-    // método para verificar se um campo está vazio
+    // método para verificar se um camp - login ou senha - o está vazio
     private static boolean campoVazio(JTextField text){
         return text.getText().trim().equals("");
     }
@@ -32,7 +35,7 @@ public class ControladorLogin {
         return new String(pwd.getPassword()).equals("");
     }
     
-    
+    // método para retornar qual o acesso
     public static String retornaAutenticacao(JTextField usuario, JPasswordField senha){
         if(campoVazio(usuario)){
             ControladorMensagem.exibeMensagem("O campo de usuário não pode ser vazio. \nFalha na autenticação.");
